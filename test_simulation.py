@@ -7,7 +7,9 @@ class TestBusinessSimulator(unittest.TestCase):
             start_cash=100000,
             monthly_revenue=10000,
             monthly_burn=5000,
-            team_size=5
+            team_size=5,
+            cac=50,
+            arpu=100
         )
 
     def test_initialization(self):
