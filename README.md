@@ -62,22 +62,22 @@ Where:
 
 ### 3. Monte Carlo Engine
 
-To estimate the probability of survival $P(Survival)$, we run $N$ independent simulations (default $N=500$).
+To estimate the probability of survival $P(\text{Survival})$, we run $N$ independent simulations (default $N=500$).
 
 Let $I_i$ be an indicator function for the $i$-th simulation run:
 $$
 I_i = \begin{cases} 
-1 & \text{if } Cash_t > 0 \text{ for all } t \in [0, T] \\\\
+1 & \text{if } \text{Cash}_t > 0 \text{ for all } t \in [0, T] \\\\
 0 & \text{otherwise}
 \end{cases}
 $$
 
 The survival probability is estimated as:
 $$
-P(Survival) \approx \frac{1}{N} \sum_{i=1}^{N} I_i
+P(\text{Survival}) \approx \frac{1}{N} \sum_{i=1}^{N} I_i
 $$
 
-We also calculate the **Confidence Interval** for cash flow at each time step $t$ by taking the 10th and 90th percentiles of the distribution of $Cash_{t}$ across all $N$ runs.
+We also calculate the **Confidence Interval** for cash flow at each time step $t$ by taking the 10th and 90th percentiles of the distribution of $\text{Cash}_{t}$ across all $N$ runs.
 
 ## 💡 Strategic Advisor Algorithm
 
@@ -125,5 +125,6 @@ This app is configured for easy deployment on **Render**.
 - [ ] **PDF Export**: Generate a downloadable PDF report for investors.
 
 ---
-*Built with ❤️ by [Vibhor]*
+*Built with ❤️ by Vibhor*
+
 
