@@ -125,4 +125,5 @@ This app is configured for easy deployment on **Render**.
 - [ ] **PDF Export**: Generate a downloadable PDF report for investors.
 
 ---
-*Built with ❤️ by [Your Name]*
+*Built with ❤️ by [Vibhor]*
+
