@@ -19,11 +19,31 @@ st.markdown("""
         width: 100%;
         background-color: #ff4b4b;
         color: white;
+        font-weight: bold;
+    }
+    
+    /* Mobile-specific adjustments */
+    @media (max-width: 768px) {
+        .block-container {
+            padding-top: 2rem !important;
+            padding-bottom: 2rem !important;
+            padding-left: 1rem !important;
+            padding-right: 1rem !important;
+        }
+        h1 {
+            font-size: 1.8rem !important;
+        }
+        .stMetric {
+            background-color: #f8f9fa;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
     }
 </style>
 """, unsafe_allow_html=True)
 
-st.title("🚀 Business Decision Simulator")
+st.title("Business Decision Simulator")
 st.markdown("Test your startup strategy with Monte Carlo simulations.")
 
 # --- Sidebar Inputs ---
@@ -129,7 +149,15 @@ if run_btn:
         xaxis_title="Month",
         yaxis_title="Cash ($)",
         template="plotly_white",
-        hovermode="x"
+        hovermode="x",
+        legend=dict(
+            orientation="h",
+            yanchor="bottom",
+            y=1.02,
+            xanchor="right",
+            x=1
+        ),
+        margin=dict(l=20, r=20, t=50, b=20)
     )
     st.plotly_chart(fig_cash, use_container_width=True)
 
@@ -141,7 +169,11 @@ if run_btn:
         labels={'x': 'Final Cash ($)'},
         color_discrete_sequence=['#636EFA']
     )
-    fig_hist.update_layout(template="plotly_white", showlegend=False)
+    fig_hist.update_layout(
+        template="plotly_white", 
+        showlegend=False,
+        margin=dict(l=20, r=20, t=30, b=20)
+    )
     st.plotly_chart(fig_hist, use_container_width=True)
 
 else:
