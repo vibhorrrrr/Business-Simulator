@@ -67,7 +67,7 @@ To estimate the probability of survival $P(Survival)$, we run $N$ independent si
 Let $I_i$ be an indicator function for the $i$-th simulation run:
 $$
 I_i = \begin{cases} 
-1 & \text{if } Cash_t > 0 \text{ for all } t \in [0, T] \\
+1 & \text{if } Cash_t > 0 \text{ for all } t \in [0, T] \\\\
 0 & \text{otherwise}
 \end{cases}
 $$
