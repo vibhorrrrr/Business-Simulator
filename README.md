@@ -1,4 +1,4 @@
-# 🚀 Business Decision Simulator
+# Business Decision Simulator
 
 > **A Monte Carlo simulation engine for testing startup strategies under uncertainty.**
 
@@ -28,6 +28,11 @@ The application is built using a clean separation of concerns between the simula
 
 The core of the simulator is a discrete-time stochastic model. We simulate the state of the company $S_t$ at month $t$ where $S_t = \{Cash_t, Revenue_t, Burn_t, Headcount_t\}$.
 
+We use a **Unit Economics** model where growth is driven by customer acquisition:
+$$
+\text{New Customers} = \frac{\text{Marketing Spend}}{\text{CAC}} + (\text{Current Customers} \times \text{Organic Growth})
+$$
+
 ### 1. State Update Equations
 
 For each month $t$, the state updates as follows:
@@ -49,7 +54,7 @@ $$
 Revenue growth is not linear. It is modeled as a random variable to simulate market uncertainty:
 
 $$
-Growth_t = BaseGrowth + StrategyImpact + \epsilon_{demand} + \delta_{shock}
+\text{Revenue}_{t+1} = (\text{Customers}_t + \text{New Customers}_{t+1}) \times \text{ARPU}
 $$
 
 Where:
@@ -89,7 +94,7 @@ The app includes a rule-based expert system that analyzes the simulation output 
 | $P(Survival) \in [0.5, 0.8)$ | **⚠️ Danger Zone**: Consider fundraising or improving unit economics. |
 | $P(Survival) \ge 0.8$ | **✅ Sustainable**: Safe to scale or take more risks. |
 | $Burn > 2 \times Revenue$ | **🔥 Burn Alert**: Unit economics are unsustainable. |
-| $Cash_{final} > 1.5 \times Cash_{start}$ | **🚀 Growth Engine**: Business is generating significant free cash flow. |
+| $Cash_{final} > 1.5 \times Cash_{start}$ | **Growth Engine**: Business is generating significant free cash flow. |
 
 ## 💻 Installation & Usage
 
@@ -125,6 +130,4 @@ This app is configured for easy deployment on **Render**.
 - [ ] **PDF Export**: Generate a downloadable PDF report for investors.
 
 ---
-*Built with ❤️ by Vibhor*
-
-
+*Built with ❤️ by [Your Name]*
