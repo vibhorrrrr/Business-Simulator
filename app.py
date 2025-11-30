@@ -38,6 +38,13 @@ st.markdown("""
             padding: 10px;
             border-radius: 5px;
             margin-bottom: 10px;
+            color: black !important;
+        }
+        .stMetric label {
+            color: #31333F !important;
+        }
+        .stMetric div[data-testid="stMetricValue"] {
+            color: #31333F !important;
         }
     }
 </style>
