@@ -53,6 +53,10 @@ with st.sidebar:
     monthly_revenue = st.number_input("Monthly Revenue ($)", value=20000, step=1000)
     monthly_burn = st.number_input("Monthly Burn ($)", value=50000, step=1000)
     team_size = st.number_input("Current Team Size", value=5, step=1)
+    
+    st.subheader("Unit Economics")
+    cac = st.number_input("CAC ($)", value=50.0, step=5.0, help="Customer Acquisition Cost")
+    arpu = st.number_input("ARPU ($)", value=100.0, step=5.0, help="Average Revenue Per User per Month")
 
     st.header("2. Strategy Decisions")
     hiring_strategy = st.selectbox("Hiring Strategy", ["None", "Moderate", "Aggressive"], index=1)
@@ -67,7 +71,7 @@ with st.sidebar:
 # --- Main Content ---
 if run_btn:
     with st.spinner("Simulating 500 futures..."):
-        sim = BusinessSimulator(start_cash, monthly_revenue, monthly_burn, team_size)
+        sim = BusinessSimulator(start_cash, monthly_revenue, monthly_burn, team_size, cac, arpu)
         raw_results = sim.run_simulation(months, runs, hiring_strategy, marketing_strategy)
         agg_results = sim.process_results(raw_results)
 
