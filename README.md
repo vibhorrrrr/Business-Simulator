@@ -29,6 +29,7 @@ The application is built using a clean separation of concerns between the simula
 The core of the simulator is a discrete-time stochastic model. We simulate the state of the company $S_t$ at month $t$ where $S_t = \{Cash_t, Revenue_t, Burn_t, Headcount_t\}$.
 
 We use a **Unit Economics** model where growth is driven by customer acquisition:
+
 $$
 \text{New Customers} = \frac{\text{Marketing Spend}}{\text{CAC}} + (\text{Current Customers} \times \text{Organic Growth})
 $$
@@ -130,4 +131,4 @@ This app is configured for easy deployment on **Render**.
 - [ ] **PDF Export**: Generate a downloadable PDF report for investors.
 
 ---
-*Built with ❤️ by [Your Name]*
+*Built with ❤️ by Vibhor*
